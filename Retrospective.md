@@ -1,14 +1,14 @@
 # Retrospective
 
-- name: Jane Doe
-- email: janedoe@u.boisestate.edu
+- name: Phillip Newell
+- email: phillipnewell@u.boisestate.edu
 
 ## Instructions
 
-For the **Experience** section you need to detail your experience with this lab. 
+For the **Experience** section you need to detail your experience with this lab.
 
-- Were there any things that you struggled with? 
-- Were there any parts of this lab that were unclear or poorly specified? 
+- Were there any things that you struggled with?
+- Were there any parts of this lab that were unclear or poorly specified?
 - Were you able to get the entire project done?
 
 For the **Known issues or Bugs** section you need to detail any issues or bugs that you have in your
