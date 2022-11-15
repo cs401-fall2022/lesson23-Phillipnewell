@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{{title}}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/stylesheets/style.css">
+    </head>
+    <body>
+        <h1>My List App</h1>
+        <img src="/images/UnrelentingPain.PNG" borderline = black>
+        <ul>
+            {% for txt in data%}
+            <ul>{{txt.blog_id}}. {{txt.blog_txt}}  </ul>
+            {% endfor%}
+        </ul>
+
+        <hr>
+        <div id="grid-container">
+        <div>
+            <h2>Add items</h2>
+            <form action="/add" method="POST">
+                <div>
+                    <label for="blog">What is your blog txt?</label>
+                    <input name="blog" id="blog" value="Hi this is my blog text!" />
+                </div>
+                <div>
+                    <button>Add item to List</button>
+                </div>
+            </form>
+            <hr>
+        </div>
+        <div>
+            <h2>Delete Items</h2>
+            <form action="/delete" method="POST">
+                    <div>
+                        <label for="blog">Delete item number: </label>
+                        <input name="blog" id="blog"/>
+                    </div>
+                    <div>
+                        <button>delete item from List</button>
+                    </div>
+            </form>
+        </div>
+        </div>
+    </body>
+</html>
