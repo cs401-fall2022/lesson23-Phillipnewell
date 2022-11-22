@@ -12,18 +12,20 @@ found on express website itself.
 Realizing that Panter used liquid express to shape out his website the
 way he did with little boby drop tables, I am engaging liquidJS tutorials.
 
-### Usage
-mkdir myapp cd myapp \ npm init \ entry point: (index.js) \ npm install express \
+### setup
 npx express-generator --view=pug \
 npm i -g npm-check-updates \
-ncu -u to update every version \
+ncu -u \
 npm install \
 npm install sqlite3 \
 npm install liquidjs\
-npm install express-validator\
 \
+\
+
+
+### usage
+$env:DEBUG='myapp:*'; npm start \
 [localhost:3000](http://localhost:3000) \
-$env:DEBUG='myapp:*'; npm start
 
 
 
