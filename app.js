@@ -1,6 +1,10 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
+//https://liquidjs.com/tutorials/use-in-expressjs.html
+var { Liquid } = require('liquidjs'); 
+var engine = new Liquid();
+//https://liquidjs.com/tutorials/use-in-expressjs.html
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
@@ -37,5 +41,11 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+//https://liquidjs.com/tutorials/use-in-expressjs.html
+app.engine('liquid', engine.express()); 
+app.set('views', './views');            // specify the views directory
+app.set('view engine', 'liquid');       // set liquid to default
+//https://liquidjs.com/tutorials/use-in-expressjs.html
 
 module.exports = app;

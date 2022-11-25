@@ -6,3 +6,44 @@ body {
 a {
   color: #00B7FF;
 }
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+#grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+
+#grid-container > div {
+  text-align: center;
+  background: lightgreen;
+  border: 3px solid green;
+  padding: 20px;
+}
+
+ul {
+  background-color: bisque;
+}
+
+h1 {
+  border-bottom: 5px solid black;
+}
