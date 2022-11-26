@@ -2,7 +2,7 @@ var express = require("express");
 var router = express.Router();
 
 /* GET home page. */
-router.get("/", function (req, res, next) {
+router.get("/", function (req, res) {
   res.render("index", { title: "Express" });
 });
 
@@ -10,8 +10,6 @@ module.exports = router;
 var express = require("express");
 var router = express.Router();
 const sqlite3 = require("sqlite3").verbose();
-//https://heynode.com/tutorial/how-validate-and-sanitize-expressjs-form/
-//const { check, validationResult } = require('express-validator');
 
 /* GET home page. */
 router.get("/", function (_req, res) {
@@ -46,7 +44,7 @@ router.get("/", function (_req, res) {
                      ('Oh my goodness blogging is fun');`,
               () => {
                 db.all(
-                  ` select blog_id, blog_title, blog_txt from blog`,
+                  ` select blog_id, blog_title, blog_txt FROM blog`,
                   (_err, rows) => {
                     res.render("index", { title: "Express", data: rows });
                   }
