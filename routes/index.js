@@ -1,11 +1,6 @@
 var express = require("express");
 var router = express.Router();
 
-/* GET home page. */
-router.get("/", function (req, res) {
-  res.render("index", { title: "Express" });
-});
-
 module.exports = router;
 var express = require("express");
 var router = express.Router();
@@ -58,6 +53,10 @@ router.get("/", function (_req, res) {
   );
 });
 
+router.get("/write", (req, res, next) => {
+  res.render("writing");
+}); 
+
 router.post("/add", (req, res, _next) => {
   console.log("Adding blog to table without sanitizing input! YOLO BABY!!");
   var db = new sqlite3.Database(
@@ -73,7 +72,7 @@ router.post("/add", (req, res, _next) => {
       //this is ripe for a exploit! DO NOT use this in production :)
       //Try and figure out how why this is unsafe and how to fix it.
       //HINT: the answer is in the XKCD comic on the home page little bobby tables :)
-
+      
       db.exec(`insert into blog ( blog_txt)
                 values ('${req.body.blog}');`);
       //redirect to homepage

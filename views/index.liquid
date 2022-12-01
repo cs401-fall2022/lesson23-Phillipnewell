@@ -6,7 +6,7 @@
         <title>{{title}}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/stylesheets/style.css">
+        {% comment %} <link rel="stylesheet" href="/stylesheets/style.css"> {% endcomment %}
     </head>
     <body>
         <img src="/images/blog.png" alt="Blog Image" style="width:320px;height:160px;" borderline = black>
@@ -16,7 +16,7 @@
             {% endfor%}
         </ul>
 
-        <div id="grid-container">
+        {% comment %} <div id="grid-container">
         <div>
             <h2>Add items</h2>
             <form action="/add" method="POST">
@@ -41,6 +41,13 @@
                     </div>
             </form>
         </div>
+        </div> {% endcomment %}
+        <div>
+        <form action="/write" method="GET">
+                    <div>
+                        <button>New page to Writing</button>
+                    </div>
+            </form>
         </div>
     </body>
 </html>
