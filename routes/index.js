@@ -55,6 +55,7 @@ router.get("/", function (_req, res) {
 
 router.get("/write", (req, res, next) => {
   res.render("writing");
+  var db = new sqlite3.Database()
 }); 
 
 router.post("/add", (req, res, _next) => {

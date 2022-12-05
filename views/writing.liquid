@@ -9,26 +9,25 @@
         {% comment %} <link rel="stylesheet" href="/stylesheets/style.css"> {% endcomment %}
     </head>
     <body>
-        <textarea name="Text1" cols="40" rows="5"></textarea>
+        <div>
+            <h3>
+                Please give your blog a title.
+            </h3>
+            <textarea name="Title" cols="40" rows="1"></textarea>
+        </div>
+        <div>
+            <h3> 
+                NOW WRITE! 
+            </h3>
+            <textarea name="Text1" cols="40" rows="5"></textarea>
+        </div>
     <div>
-        <form action="/add" method="POST">
-            <div>
-                <label for="blog">What is your blog txt?</label>
-                <input name="blog" id="blog" value="Blog Title" />
-            </div>
-        </form>
-    </div>
-    <div>
-        <h2>Delete Items</h2>
-        <form action="/delete" method="POST">
-                <div>
-                    <label for="blog">Delete item number: </label>
-                    <input name="blog" id="blog"/>
-                </div>
-                <div>
-                    <button>delete item from List</button>
-                </div>
-        </form>
+    <form action="/" method="POST">
+            <button>Add blog</button>
+    </form>
+    <form action="/" method="GET">
+            <button>Cancel</button>
+    </form>
     </div>
     </body>
 </html>
