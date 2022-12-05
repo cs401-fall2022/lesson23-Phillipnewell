@@ -12,7 +12,7 @@
         <img src="/images/blog.png" alt="Blog Image" style="width:320px;height:160px;" borderline = black>
         <ul>
             {% for txt in data%}
-            <ul>{{txt.blog_id}}. {{txt.blog_txt}}  </ul>
+            <ul>{{txt.blog_id}}. <strong>{{txt.blog_title}}</strong> {{txt.blog_txt}}  </ul>
             {% endfor%}
         </ul>
 

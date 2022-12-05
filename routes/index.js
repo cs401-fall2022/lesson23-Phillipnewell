@@ -34,12 +34,11 @@ router.get("/", function (_req, res) {
                      blog_title text NOT NULL,
                      blog_txt text NOT NULL);
 
-                     insert into blog (blog_txt)
-                     values ('This is a great blog'),
-                     ('Oh my goodness blogging is fun');`,
+                     INSERT INTO blog (blog_title, blog_txt) VALUES ('This is a cool blog title','This is a great blog');`,
               () => {
                 db.all(
-                  ` select blog_id, blog_title, blog_txt FROM blog`,
+                  ` SELECT blog_id, blog_title, blog_txt 
+                    FROM blog`,
                   (_err, rows) => {
                     res.render("index", { title: "Express", data: rows });
                   }
@@ -55,7 +54,6 @@ router.get("/", function (_req, res) {
 
 router.get("/write", (req, res, next) => {
   res.render("writing");
-  var db = new sqlite3.Database()
 }); 
 
 router.post("/add", (req, res, _next) => {
@@ -74,8 +72,8 @@ router.post("/add", (req, res, _next) => {
       //Try and figure out how why this is unsafe and how to fix it.
       //HINT: the answer is in the XKCD comic on the home page little bobby tables :)
       
-      db.exec(`insert into blog ( blog_txt)
-                values ('${req.body.blog}');`);
+      db.exec(`insert into blog ( blog_txt) values ('${req.body.blog}');`);
+      db.exec(`insert into blog ( blog_txt) values ('${req.body.blog}');`);
       //redirect to homepage
       res.redirect("/");
     }
