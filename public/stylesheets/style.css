@@ -48,3 +48,10 @@ ul {
 h1 {
   border-bottom: 5px solid black;
 }
+
+button {
+  display: inline-block;
+  background-color: orange;
+  cursor: pointer;
+  
+}

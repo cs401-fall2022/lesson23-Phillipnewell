@@ -1,5 +1,6 @@
 var createError = require("http-errors");
 var express = require("express");
+
 var path = require("path");
 //https://liquidjs.com/tutorials/use-in-expressjs.html
 var { Liquid } = require("liquidjs");
@@ -11,7 +12,13 @@ var logger = require("morgan");
 var indexRouter = require("./routes/index");
 
 var app = express();
-
+// npm sanitize instructions
+app.use(require('sanitize').middleware);
+app.get('/ping', function(req, res) {
+	var param = req.queryInt('param');
+	res.send('pong ' + (typeof param) + ' ' + param);
+});
+app.listen(8080);
 // liquid engine setup
 app.engine("liquid", engine.express());
 app.set("views", "./views"); // specify the views directory

@@ -6,7 +6,7 @@
         <title>{{title}}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% comment %} <link rel="stylesheet" href="/stylesheets/style.css"> {% endcomment %}
+        <link rel="stylesheet" href="/stylesheets/style.css">
     </head>
     <body>
         {% comment %} This div will contain an image and contents {% endcomment %}
@@ -25,16 +25,12 @@
             </ul>
         </div>
 
-        {% comment %} <div id="grid-container">
+        <div id="grid-container">
         <div>
             <h2>Add items</h2>
-            <form action="/add" method="POST">
+            <form action="/write" method="GET">
                 <div>
-                    <label for="blog">What is your blog txt?</label>
-                    <input name="blog" id="blog" value="Hi this is my blog text!" />
-                </div>
-                <div>
-                    <button>Add item to List</button>
+                    <button>New page to Writing</button>
                 </div>
             </form>
         </div>
@@ -50,13 +46,9 @@
                     </div>
             </form>
         </div>
-        </div> {% endcomment %}
+        </div>
     <div>
-        <form action="/write" method="GET">
-                <div>
-                    <button>New page to Writing</button>
-                </div>
-        </form>
+        
     </div>
     </body>
 </html>

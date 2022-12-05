@@ -6,29 +6,28 @@
         <title>{{title}}</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% comment %} <link rel="stylesheet" href="/stylesheets/style.css"> {% endcomment %}
+        <link rel="stylesheet" href="/stylesheets/style.css">
     </head>
     <body>
-        <div>
-            <h3>
-                Please give your blog a title.
-            </h3>
-            <textarea name="Title" cols="40" rows="1"></textarea>
-        </div>
-        <div>
-            <h3> 
-                NOW WRITE! 
-            </h3>
-            <textarea name="Text1" cols="40" rows="5"></textarea>
-        </div>
-    <div>
+        
     <form action="/add" method="POST">
-            <button>Add blog</button>
-            <input name="blog" id="blog" value="Title" />
+    <div>
+        <h3>
+            Please give your blog a title.
+        </h3>
+        <textarea name="blog" value="blog_title" cols="40" rows="1"></textarea>
+    </div>
+    <div>
+        <h3> 
+            NOW WRITE! 
+        </h3>
+        <textarea name="blog" value="blog_text" cols="40" rows="5"></textarea>
+    </div>
+            <button value="button_value">Add blog</button>
+            {% comment %} <input name="blog" id="blog" value="Title" /> {% endcomment %}
     </form>
     <form action="/" method="GET">
-            <button>Cancel</button>
+        <button>Cancel</button>
     </form>
-    </div>
     </body>
 </html>

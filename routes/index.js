@@ -76,8 +76,7 @@ router.post("/add", (req, res, _next) => {
       //Try and figure out how why this is unsafe and how to fix it.
       //HINT: the answer is in the XKCD comic on the home page little bobby tables :)
       
-      db.exec(`insert into blog ( blog_txt) values ('${req.body.blog}');`);
-      db.exec(`insert into blog ( blog_title) values ('${req.body.blog}');`);
+      db.exec(`insert into blog ( blog_title, blog_txt) values ('${req.body.blog}','${req.body.blog}');`);
       //redirect to homepage
       res.redirect("/");
     }
