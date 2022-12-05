@@ -9,12 +9,21 @@
         {% comment %} <link rel="stylesheet" href="/stylesheets/style.css"> {% endcomment %}
     </head>
     <body>
-        <img src="/images/blog.png" alt="Blog Image" style="width:320px;height:160px;" borderline = black>
-        <ul>
-            {% for txt in data%}
-            <ul>{{txt.blog_id}}. <strong>{{txt.blog_title}}</strong> {{txt.blog_txt}}  </ul>
-            {% endfor%}
-        </ul>
+        {% comment %} This div will contain an image and contents {% endcomment %}
+        <div>
+            <img src="/images/blog.png" alt="Blog Image" style="width:320px;height:160px;" borderline = black>
+            <ul>
+                {% for txt in data%}
+                    <ul>
+                        {{txt.blog_id}}.
+                        {{txt.blog_title}}
+                        <form action="/update" method="GET">
+                            <button>Update</button> 
+                        </form>
+                    </ul>
+                {% endfor%}
+            </ul>
+        </div>
 
         {% comment %} <div id="grid-container">
         <div>

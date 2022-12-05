@@ -22,7 +22,7 @@ router.get("/", function (_req, res) {
         (_err, rows) => {
           if (rows.length === 1) {
             console.log("Table exists!");
-            db.all(` select blog_id, blog_txt from blog`, (_err, rows) => {
+            db.all(` select blog_id, blog_title, blog_txt from blog`, (_err, rows) => {
               console.log("returning " + rows.length + " records");
               res.render("index", { title: "Express", data: rows });
             });
@@ -54,7 +54,11 @@ router.get("/", function (_req, res) {
 
 router.get("/write", (req, res, next) => {
   res.render("writing");
-}); 
+});
+
+router.get("/update"), (req,res, _next) => {
+  res.render("writing");
+}
 
 router.post("/add", (req, res, _next) => {
   console.log("Adding blog to table without sanitizing input! YOLO BABY!!");
@@ -73,7 +77,7 @@ router.post("/add", (req, res, _next) => {
       //HINT: the answer is in the XKCD comic on the home page little bobby tables :)
       
       db.exec(`insert into blog ( blog_txt) values ('${req.body.blog}');`);
-      db.exec(`insert into blog ( blog_txt) values ('${req.body.blog}');`);
+      db.exec(`insert into blog ( blog_title) values ('${req.body.blog}');`);
       //redirect to homepage
       res.redirect("/");
     }
