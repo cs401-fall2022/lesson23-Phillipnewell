@@ -16,7 +16,8 @@
                 {% for txt in data%}
                     <ul>
                         {{txt.blog_id}}.
-                        {{txt.blog_title}}
+                        {{txt.blog_title}}:
+                        {{txt.blog_txt}}
                         <form action="/update" method="GET">
                             <button>Update</button> 
                         </form>

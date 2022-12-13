@@ -75,7 +75,11 @@ router.post("/add", (req, res, _next) => {
       //this is ripe for a exploit! DO NOT use this in production :)
       //Try and figure out how why this is unsafe and how to fix it.
       //HINT: the answer is in the XKCD comic on the home page little bobby tables :)
-      db.exec(`insert into blog ( blog_title, blog_txt) values ('${req.body.blog}','${req.body.blog}');`);
+      var data = req.body.blog;
+      console.log(data);
+      console.log("blog_title: ", data[0]);
+      console.log("blog_txt: ", data[1]);
+      db.exec(`insert into blog ( blog_title, blog_txt) values ('${data[0]}','${data[1]}');`);
       //redirect to homepage
       res.redirect("/");
     }
